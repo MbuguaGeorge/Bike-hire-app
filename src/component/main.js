@@ -7,6 +7,7 @@ import Rent from './bike_rental'
 import About from './about'
 import Rent_Bike from './rent_a_bike'
 import Provider from './provider'
+import Book from './booking'
 
 const Main = () => (
 
@@ -18,6 +19,7 @@ const Main = () => (
         <Route path="/about" component={About} />
         <Route path="/rent_a_bike" component={Rent_Bike} />
         <Route path="/providers" component={Provider} />
+        <Route path="/book" component={Book} />
     </Switch>
 )
 
