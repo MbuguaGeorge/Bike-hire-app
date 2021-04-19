@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+@charset "UTF-8";
+html {
+    font-size: 90%;
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Navigation Styling */
+
+.logo h1{
+    font-size: 2rem;
+    color: #ddd;
+}
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: transparent;
+
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+}
+nav ul li a:hover{
+    color: crimson;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* provider styling */
+
+.provider__page h1{
+    text-align: center;
+    margin-top: 100px;
+    color: crimson;
+}
+.provider__page hr{
+    height: 0;
+    margin-top: 0;
+    width: 550px;
+    background-color: #ddd;
+    border: 1px #ddd solid;
 }
 
-.App-link {
-  color: #61dafb;
+.side__bar{
+    margin-top: 70px;
+    margin-right: 50px;
+    float: right;
+    margin-bottom: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side__bar h2{
+    margin-bottom: 20px;
+}
+
+.side__bar ul{
+    display: flex;
+}
+
+.side__bar ul:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.side__bar ul li{
+    list-style: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    width: 40vh;
+}
+
+.side__bar ul li button{
+    padding: 8px 30px;
+    border: 1px #ddd solid;
+    border-radius: 4px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 1.4rem;
 }

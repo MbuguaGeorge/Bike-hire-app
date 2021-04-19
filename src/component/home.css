@@ -1,0 +1,44 @@
+.home__page{
+    background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)), url(../images/daniel-salcius-RRcYcdGY630-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: 1;
+}
+.cover__page{
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cover__page h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5.3rem;
+    color: white;
+}
+.cover__page p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 1.5rem;
+}
+.forms button{
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 2px #ddd solid;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+}
+.forms button:hover{
+    background-color: aquamarine;
+    border: 2px aquamarine solid;
+    color: black;
+}
+.forms{
+    padding: 20px;
+}
+.forms a{
+    padding: 10px;
+}
