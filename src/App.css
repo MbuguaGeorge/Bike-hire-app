@@ -77,6 +77,7 @@ nav ul li a:hover{
 
 .side__bar ul{
     display: flex;
+    justify-content: space-between;
 }
 
 .side__bar ul:hover{
@@ -87,9 +88,6 @@ nav ul li a:hover{
 .side__bar ul li{
     list-style: none;
     padding: 8px;
-    display: flex;
-    justify-content: center;
-    width: 40vh;
 }
 
 .side__bar ul li button{
@@ -99,4 +97,32 @@ nav ul li a:hover{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700;
     font-size: 1.4rem;
+}
+
+.side__bar img{
+    width: 20px;
+    cursor: pointer;
+}
+
+.side__bar ol{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.left__side__bar{
+    float: left;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+
+.left__side__bar h2{
+    margin-bottom: 20px;
+}
+
+.left__side__bar ul li{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

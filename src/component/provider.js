@@ -1,11 +1,29 @@
+import React, {useState} from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import calendar from '../images/calendar.png'
+
 function Provider(){
+
+    const [open, setOpen] = useState(false);
+
+    function clickHandler(){
+        setOpen(prevOpen => !prevOpen)
+    }
+
     return(
         <div>
             <section className="provider__page">
                 <h1>John Smith</h1>
                 <div className="provider">
                     <div className="side__bar">
-                        <h2>Available on April 18, 2021</h2>
+                        <ol>
+                            <li><h2>Available on April 18, 2021</h2></li>
+                            <li><img src={calendar} alt="calendar" onClick={clickHandler} /></li>
+                        </ol>
+                        <div className="calendar" style={{position: "absolute", display: open ? "block" : "none" }} >
+                            <Calendar />
+                        </div>
                         <hr />
                         <ul>
                             <li><h3>All day</h3></li>
@@ -42,6 +60,13 @@ function Provider(){
                             <li><button>Available</button></li>
                         </ul>
                         <hr />
+                    </div>
+                    <div className="left__side__bar">
+                        <h2>I offer my bike on the following rates</h2>
+                        <ul>
+                            <li><span>Hourly Rate</span> $2</li>
+                            <li><span>Daily Rate</span> $10</li>
+                        </ul>
                     </div>
                 </div>
             </section>
