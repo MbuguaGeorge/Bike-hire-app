@@ -30,7 +30,7 @@ nav{
     align-items: center;
     min-height: 10vh;
     background-color: transparent;
-
+    position: fixed;
 }
 nav ul{
     display: flex;
@@ -50,6 +50,10 @@ nav ul li a:hover{
 }
 
 /* provider styling */
+.provider__page{
+    display: flex;
+    flex-direction: column;
+}
 
 .provider__page h1{
     text-align: center;
@@ -127,3 +131,11 @@ nav ul li a:hover{
     width: 100%;
 }
 
+.booking{
+    margin-top: 0;
+    margin-left: 400px;
+}
+
+.provider__page::after{
+    filter: brightness(20%);
+}

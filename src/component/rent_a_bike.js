@@ -1,7 +1,7 @@
 function Rent_Bike(){
     return(
         <div>
-            
+
         </div>
     )
 }

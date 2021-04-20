@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import calendar from '../images/calendar.png'
+import Book from './booking'
 
 function Provider(){
 
@@ -11,8 +12,18 @@ function Provider(){
         setOpen(prevOpen => !prevOpen)
     }
 
+    const [book, setBook] = useState(false);
+
+    function onClick(){
+        setBook(prevBook => !prevBook)
+    }
+
+
     return(
         <div>
+            <div className="booking" style={{position: "absolute", display: book ? "block" : "none"}} >
+                <Book />
+            </div>
             <section className="provider__page">
                 <h1>John Smith</h1>
                 <div className="provider">
@@ -25,7 +36,7 @@ function Provider(){
                             <Calendar />
                         </div>
                         <hr />
-                        <ul>
+                        <ul onClick={onClick} >
                             <li><h3>All day</h3></li>
                             <li><button>Available</button></li>
                         </ul>

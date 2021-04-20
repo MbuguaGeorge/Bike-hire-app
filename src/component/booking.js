@@ -1,13 +1,14 @@
 import cancel from '../images/cancel.png'
 
 function Book(){
+
     return(
         <div className="bike__booking" >
             <div className="booking__container">
                 <header>
                     <ol>
                         <li><h2>Book</h2></li>
-                        <li><img src={cancel} alt="cross" /></li>
+                        <li><img src={cancel} alt="cross"/></li>
                     </ol>
                 </header>
                 <div className="booking__details">

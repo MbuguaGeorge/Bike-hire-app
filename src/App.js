@@ -5,6 +5,7 @@ import '../src/component/login.css'
 import '../src/component/bike_rental.css'
 import '../src/component/about.css'
 import '../src/component/booking.css'
+import '../src/component/rent_a_bike.css'
 import Main from './component/main.js'
 import Header from './component/header'
 

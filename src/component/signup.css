@@ -36,7 +36,7 @@
     border-color: #2ecc71;
 }
   
-.signup input[type = "submit"]{
+.signup button{
     border: 0;
     background: none;
     display: block;
