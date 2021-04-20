@@ -30,6 +30,7 @@
     color: white;
     font-weight: 700;
     text-align: center;
+    outline: none;
 }
 .forms button:hover{
     background-color: aquamarine;
@@ -41,4 +42,9 @@
 }
 .forms a{
     padding: 10px;
+}
+
+.sign{
+    position: absolute;
+    margin-left: 500px;
 }
