@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import calendar from '../images/calendar.png'
@@ -18,10 +18,24 @@ function Provider(){
         setBook(prevBook => !prevBook)
     }
 
+    const bookRef = useRef();
+
+    useEffect(() => {
+        const handler = (event) => {
+            if (!bookRef.current.contains(event.target)){
+                setBook(false);
+            };
+        };
+            document.addEventListener("mousedown", handler);
+            return () => {
+                document.removeEventListener("mousedown", handler);
+            };
+    });
+
 
     return(
         <div>
-            <div className="booking" style={{position: "absolute", display: book ? "block" : "none"}} >
+            <div className="booking" style={{position: "absolute", display: book ? "block" : "none"}} ref={bookRef} >
                 <Book />
             </div>
             <section className="provider__page">
