@@ -1,7 +1,7 @@
 .signup{
     width: 350px;
     position: absolute;
-    top: 300px;
+    top: 330px;
     left: 50%;
     transform: translate(-50%,-50%);
     background: rgba(0,0,0,0.9);
@@ -54,6 +54,11 @@
     margin-bottom: 50px;
 }
   
-.signup input[type = "submit"]:hover{
+.signup button:hover{
     background: #2ecc71;
+}
+
+.error h5{
+    color: red;
+    margin: 0;
 }
