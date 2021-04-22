@@ -1,9 +1,8 @@
 import cancel from '../images/cancel.png'
 
 function Book(){
-
     return(
-        <div className="bike__booking" >
+        <div className="bike__booking">
             <div className="booking__container">
                 <header>
                     <ol>

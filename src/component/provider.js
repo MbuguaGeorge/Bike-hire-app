@@ -8,6 +8,8 @@ function Provider(){
 
     const [open, setOpen] = useState(false);
 
+    const [selectedDate, setSelectedDate] = useState(null);
+
     function clickHandler(){
         setOpen(prevOpen => !prevOpen)
     }
@@ -43,11 +45,14 @@ function Provider(){
                 <div className="provider">
                     <div className="side__bar">
                         <ol>
-                            <li><h2>Available on April 18, 2021</h2></li>
+                            <li><h2>Available on </h2></li>
                             <li><img src={calendar} alt="calendar" onClick={clickHandler} /></li>
                         </ol>
                         <div className="calendar" style={{position: "absolute", display: open ? "block" : "none" }} >
-                            <Calendar />
+                            <Calendar minDate={new Date()}
+                                selected={selectedDate}
+                                onChange = {date => setSelectedDate(date)}
+                            />
                         </div>
                         <hr />
                         <ul onClick={onClick} >
