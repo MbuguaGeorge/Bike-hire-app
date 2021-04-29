@@ -1,18 +1,18 @@
 import {Link} from 'react-router-dom'
 
-function Card(){
+const Card = ({first,last,hourly,daily}) => {
     return(
         <div>
                 <div className="card__provider">
                     <Link to="/providers">
                         <header>
                             <span initials="JS"></span>
-                            <h2>John Smith</h2>
+                            <h2>{first} {last}</h2>
                         </header>
                         <main>
                             <ul>
-                                <li><span>Hourly Rate</span> $2</li>
-                                <li><span>Daily Rate</span> $10</li>
+                                <li><span>Hourly Rate</span> ${hourly}</li>
+                                <li><span>Daily Rate</span> ${daily}</li>
                                 <li><span>Rent Now</span> Available</li>
                             </ul>
                         </main>
