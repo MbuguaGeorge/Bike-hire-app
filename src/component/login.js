@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
 
 const initialState = {
     nameError: '',
@@ -31,7 +32,7 @@ class Login extends Component{
             passwordError = 'cannot be blank';
         }
 
-        if (nameError || passwordError ){
+        if (nameError || passwordError){
             this.setState({nameError, passwordError});
             return false;
         }
@@ -49,8 +50,18 @@ class Login extends Component{
                 headers: {'Content-Type' : 'application/json'},
                 body: JSON.stringify(this.state.credentials)
             }).then(
-                data => {
-                    console.log(data);
+                res => {
+                    console.log(res);
+                    res.json().then(data => {
+                        console.log(data)
+                        if (data.token){
+                            localStorage.setItem('token', data.token)
+                            return <Redirect to ="/about"  />
+                        }
+                        if(!data.token){
+                            localStorage.setItem('token', data.error)
+                        }
+                    });
                 }
             ).catch( error => console.log(error))
         }

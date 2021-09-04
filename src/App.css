@@ -30,7 +30,7 @@ nav{
     align-items: center;
     min-height: 10vh;
     background-color: transparent;
-
+    position: fixed;
 }
 nav ul{
     display: flex;

@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios'
+
+axios.defaults.headers.common['Authorization'] = 'Token ' + localStorage.getItem('token');
 
 ReactDOM.render(
   <BrowserRouter>

@@ -1,29 +1,42 @@
 import React,{Component} from 'react'
-
+import {Redirect} from 'react-router-dom';
+import axios from 'axios';
 
 class Rent_Bike extends Component{
 
     state = {
         profile:{
-            student: '',
+            username: '',
             firstname: '',
             lastname: '',
             contact: '',
             hourly: '',
             daily: ''
-        }
+        },
+        cur_user: []
+    }
+
+    componentDidMount(){
+
+        axios.get(`http://127.0.0.1:8000/cur/`).then(
+            res => {
+                this.setState({
+                    cur_user: res.data.user.id
+                })
+            }
+        )
+
+        
+        
     }
 
     submit = (event) => {
         event.preventDefault();
+        const data = (this.state.profile)
         console.log(this.state.profile)
-        fetch('http://127.0.0.1:8000/profile',{
-            method: 'POST',
-            headers: {'Content-Type' : 'application/json'},
-            body: JSON.stringify(this.state.profile)
-        }).then (
-            data => {
-                console.log(data)
+        axios.post('http://127.0.0.1:8000/profile/', data).then (
+            res => {
+                console.log(res)
             }
         ).catch( error =>console.error(error))
     };
@@ -35,6 +48,10 @@ class Rent_Bike extends Component{
     };
 
     render(){
+        if (!localStorage.getItem('token') || localStorage.getItem('token') === 'Wrong credentials'){
+            return <Redirect to ="/" />
+    }
+    console.log(this.state.cur_user)
     return(
         <div>
             <div className="profile">
@@ -43,8 +60,8 @@ class Rent_Bike extends Component{
                     <h2>Username</h2>
                     <input 
                         type='text'
-                        name='student'
-                        value={this.state.profile.student}
+                        name='username'
+                        value={this.state.profile.username = this.state.cur_user}
                         onChange={this.inputChange}
                     />
                     <h2>First Name</h2>

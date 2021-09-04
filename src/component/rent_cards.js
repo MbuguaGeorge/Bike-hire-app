@@ -1,12 +1,12 @@
 import {Link} from 'react-router-dom'
 
-const Card = ({first,last,hourly,daily}) => {
+const Card = ({first,last,hourly,daily,initial}) => {
     return(
         <div>
                 <div className="card__provider">
                     <Link to="/providers">
                         <header>
-                            <span initials="JS"></span>
+                            <span initials={initial}></span>
                             <h2>{first} {last}</h2>
                         </header>
                         <main>

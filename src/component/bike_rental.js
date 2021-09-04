@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import {Redirect} from 'react-router-dom';
 import Card from './rent_cards'
 
 const Rent = () => {
@@ -10,11 +11,15 @@ const Rent = () => {
     }, []);
 
     const getHire = async() => {
-        const response = await fetch(`http://localhost:8000/userlist`);
+        const response = await fetch(`http://localhost:8000/bike`);
         const data = await response.json();
         console.log(data)
         setHire(data);
     };
+    
+        if (!localStorage.getItem('token') || localStorage.getItem('token') === 'Wrong credentials'){
+            return <Redirect to ="/" />
+        };
 
     return(
         <div>
@@ -26,9 +31,11 @@ const Rent = () => {
                         <Card 
                             key = {hires.firstname}
                             first = {hires.firstname}
+                            user = {hires.username}
                             last = {hires.lastname}
                             hourly = {hires.hourly}
                             daily = {hires.daily}
+                            initial = {hires.initials}
                         />
                     ))}
                 </div>
